@@ -1,0 +1,124 @@
+:root {
+  /* Fonts */
+  --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Font Sizes */
+  --text-xs: 0.75rem;    /* 12px */
+  --text-sm: 0.875rem;   /* 14px */
+  --text-base: 1rem;     /* 16px */
+  --text-lg: 1.125rem;   /* 18px */
+  --text-xl: 1.25rem;    /* 20px */
+  --text-2xl: 1.5rem;    /* 24px */
+  --text-3xl: 2rem;      /* 32px */
+  --text-4xl: 2.5rem;    /* 40px */
+  --text-5xl: 3.5rem;    /* 56px */
+  --text-6xl: 4.5rem;    /* 72px */
+
+  /* Spacing System (8px Baseline) */
+  --space-1: 0.25rem;  /* 4px */
+  --space-2: 0.5rem;   /* 8px */
+  --space-3: 0.75rem;  /* 12px */
+  --space-4: 1rem;     /* 16px */
+  --space-6: 1.5rem;   /* 24px */
+  --space-8: 2rem;     /* 32px */
+  --space-12: 3rem;    /* 48px */
+  --space-16: 4rem;    /* 64px */
+  --space-24: 6rem;    /* 96px */
+  --space-32: 8rem;    /* 128px */
+
+  /* Border Radii */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+
+  /* Breakpoints */
+  --width-container: 1320px;
+
+  /* Motion & Easings */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: 150ms var(--ease-out-expo);
+  --transition-normal: 300ms var(--ease-out-expo);
+  --transition-slow: 500ms var(--ease-out-expo);
+
+  /* Z-Index Layers */
+  --z-background: -1;
+  --z-base: 1;
+  --z-sticky: 50;
+  --z-popover: 100;
+  --z-drawer: 500;
+  --z-modal: 1000;
+  --z-cursor: 9999;
+}
+
+/* Deep Blue Corporate Theme Variables */
+[data-theme="dark"] {
+  /* Neutrals */
+  --bg-primary: #050914;      /* Background 900 */
+  --bg-secondary: #08111D;    /* Background 800 */
+  --bg-tertiary: #0D1625;     /* Background 700 */
+  --bg-elevated: #111C2E;     /* Surface */
+  --bg-elevated-hover: #172437; /* Elevated Surface */
+
+  /* Text */
+  --text-primary: #FFFFFF;
+  --text-secondary: #D6DEE8;
+  --text-muted: #A2B2C7;
+  --text-disabled: #B9C2CC;
+
+  /* Accents */
+  --accent-primary: #4F7CCF;      /* Royal Blue */
+  --accent-secondary: #335EAA;    /* Steel Blue */
+  --brand-navy: #13273D;
+  --brand-midnight: #0C223A;
+  --brand-dark: #0C1E34;
+
+  /* Glass */
+  --glass-bg-sm: rgba(17, 28, 46, 0.5);
+  --glass-bg-md: rgba(17, 28, 46, 0.72);
+  --glass-bg-lg: rgba(17, 28, 46, 0.85);
+
+  /* Borders */
+  --border-soft: #22324B;
+  --border-standard: #2B3E5C;
+  --glass-border: rgba(79, 124, 207, 0.18);
+  --glass-border-hover: #4F7CCF;
+
+  /* Shadows */
+  --shadow-sm: 0 10px 30px rgba(0, 0, 0, 0.25);
+  --shadow-md: 0 20px 60px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 30px 90px rgba(0, 0, 0, 0.45);
+  --shadow-glow: 0 0 40px rgba(79, 124, 207, 0.20);
+  --shadow-card-glow: 0 25px 60px rgba(0, 0, 0, 0.45);
+
+  /* Status */
+  --status-success: #3DDC97;
+  --status-warning: #F5B942;
+  --status-error: #FF5C72;
+  --status-info: #63A8FF;
+
+  /* Semantic Accents */
+  --accent-cyan: #4F7CCF;
+  --accent-cyan-glow: rgba(79, 124, 207, 0.25);
+  --accent-gold: #D4AF37;
+
+  /* Extended Shadows */
+  --shadow-lg: 0 30px 90px rgba(0, 0, 0, 0.45);
+
+  --focus-ring: #4F7CCF;
+}
+
+/* Light theme could be defined similarly, but we are enforcing dark mode */
+[data-theme="light"] {
+  --bg-primary: #FAFAFC;
+  --bg-secondary: #F1F5F9;
+  --bg-elevated: #FFFFFF;
+  --text-primary: #0F172A;
+  --text-secondary: #334155;
+  --text-muted: #64748B;
+  --accent-primary: #4F7CCF;
+  --glass-bg-md: rgba(241, 245, 249, 0.85);
+  --glass-border: rgba(15, 23, 42, 0.1);
+}
