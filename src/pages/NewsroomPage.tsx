@@ -383,6 +383,8 @@ export const NewsroomPage: React.FC<NewsroomPageProps> = ({ onNavigate }) => {
 
       {/* HERO */}
       <section className="newsroom-hero" style={{ position: 'relative', overflow: 'hidden', padding: 'clamp(5rem, 10vw, 7rem) 2rem clamp(2.5rem, 5vw, 3.5rem)', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+        <img src="/news_team.jpg" alt="" aria-hidden="true" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.25, filter: 'brightness(0.7) saturate(0.8)' }} />
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(5,9,20,0.68) 0%, rgba(5,9,20,0.38) 50%, #050914 100%)', pointerEvents: 'none' }} />
         <div style={{ position: 'absolute', top: '-30%', left: '15%', width: '500px', height: '500px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(79,124,207,0.1), transparent 70%)', filter: 'blur(120px)', pointerEvents: 'none' }} />
         <div style={{ position: 'absolute', bottom: '-20%', right: '10%', width: '450px', height: '450px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(79,124,207,0.08), transparent 70%)', filter: 'blur(100px)', pointerEvents: 'none' }} />
         <div className="hero-content" style={{ position: 'relative', zIndex: 1, maxWidth: '720px' }}>

@@ -48,7 +48,10 @@ export const CORE_COMPANY_IDS = ['cristedor-labs', 'cristedor-media'] as const;
 
 export const ENTITY_BG: Record<string, string> = {
   'cristedor-labs': '/card_labs.jpg',
-  'cristedor-media': '/card_media.jpg'
+  'cristedor-media': '/card_media.jpg',
+  unistay: '/unistay-hero.jpeg',
+  'synkturt-tts': '/synkturt-hero.jpeg',
+  vibetix: '/vibetix-hero.jpeg'
 };
 
 export const PORTFOLIO_UPDATED = 'August 2026';

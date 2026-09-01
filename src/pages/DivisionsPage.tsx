@@ -45,14 +45,20 @@ export const DivisionsPage: React.FC<DivisionsPageProps> = ({ onNavigate }) => {
   ];
 
   return (
-    <div style={{ padding: 'var(--space-16) 0' }}>
-      <div className="container">
-        <SectionHeader
-          badge="❖ VENTURES"
-          title="Our Ventures"
-          description="The companies Cristedor Group owns and operates today — the parent, plus technology and media ventures being established."
-        />
+    <div style={{ backgroundColor: '#050914', minHeight: '100vh' }}>
+      <section style={{ position: 'relative', overflow: 'hidden', padding: 'clamp(5rem, 10vw, 7rem) 2rem clamp(3rem, 6vw, 4.5rem)', textAlign: 'center' }}>
+        <img src="/divisions-hero.jpeg" alt="" aria-hidden="true" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.3, filter: 'brightness(0.7) saturate(0.85)' }} />
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(5,9,20,0.62) 0%, rgba(5,9,20,0.3) 50%, #050914 100%)', pointerEvents: 'none' }} />
+        <div className="container" style={{ position: 'relative', zIndex: 1 }}>
+          <SectionHeader
+            badge="❖ VENTURES"
+            title="Our Ventures"
+            description="The companies Cristedor Group owns and operates today — the parent, plus technology and media ventures being established."
+          />
+        </div>
+      </section>
 
+      <div className="container" style={{ padding: '0 1.5rem var(--space-16)' }}>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-8)' }}>
           {divisions.map(div => (
             <GlassCard key={div.id} style={{ padding: 'var(--space-8)' }}>

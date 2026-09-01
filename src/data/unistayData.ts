@@ -98,6 +98,16 @@ export const unistayVision = {
   quote: 'To build a trusted digital infrastructure for university accommodation, connecting students, hostel owners, and student communities through a simpler housing experience.',
 };
 
+export const unistayPitchDeck = {
+  eyebrow: 'PITCH DECK',
+  heading: 'Explore the UniStay Vision',
+  description: 'The pitch deck covers the problem we\u2019re solving, UniStay\u2019s product vision as an intelligent student-housing decision-support platform, the current web foundation, the proposed AI intelligence layer, why Google AI, our Ghana-first expansion strategy, and the development roadmap.',
+  viewLabel: 'View Pitch Deck',
+  downloadLabel: 'Download Pitch Deck',
+  assetPath: '/UniStay_Pitch_Deck.pdf',
+  fileName: 'UniStay_Pitch_Deck.pdf',
+};
+
 export const unistayAI = {
   eyebrow: 'AI-POWERED HOUSING INTELLIGENCE',
   symbol: '\u2726',

@@ -12,6 +12,8 @@ export const PortfolioHero: React.FC<PortfolioHeroProps> = ({ onNavigate }) => (
     padding: 'clamp(5rem, 10vw, 7rem) 2rem clamp(3rem, 6vw, 4.5rem)',
     display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center'
   }}>
+    <img src="/portfolio-hero.jpeg" alt="" aria-hidden="true" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.32, filter: 'brightness(0.7) saturate(0.85)' }} />
+    <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(5,9,20,0.6) 0%, rgba(5,9,20,0.25) 45%, #050914 100%)', pointerEvents: 'none' }} />
     {/* Ambient orbs */}
     <div style={{
       position: 'absolute', top: '-30%', left: '20%',

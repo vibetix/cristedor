@@ -332,6 +332,8 @@ export const NotFoundPage: React.FC<NotFoundPageProps> = ({ onNavigate }) => {
            SECTION 1: THE VOID HERO
          ══════════════════════════════════════════════════════════ */}
       <section role="main" aria-labelledby="nf-title" className="nf-hero-section" style={{ position: 'relative', minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '6rem 2rem 4rem', zIndex: 1 }}>
+        <img src="/404-hero.jpeg" alt="" aria-hidden="true" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.2, filter: 'brightness(0.65) saturate(0.75)' }} />
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(5,9,20,0.7) 0%, rgba(5,9,20,0.42) 50%, #050914 100%)', pointerEvents: 'none' }} />
 
         {/* Ghost 404 watermark */}
         <div aria-hidden="true" style={{

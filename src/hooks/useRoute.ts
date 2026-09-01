@@ -5,16 +5,27 @@ interface RouteParams {
   id?: string;
 }
 
+const normalizePath = (pathname: string): string => {
+  if (!pathname || pathname === '/') {
+    return '/';
+  }
+
+  const trimmed = pathname.replace(/\/+$/, '');
+  return trimmed || '/';
+};
+
 const parseRoute = (pathname: string): { path: RoutePath; params: RouteParams } => {
-  if (pathname.startsWith('/portfolio/')) {
-    const id = pathname.slice('/portfolio/'.length);
+  const normalizedPath = normalizePath(pathname);
+
+  if (normalizedPath.startsWith('/portfolio/')) {
+    const id = normalizedPath.slice('/portfolio/'.length);
     return { path: '/portfolio', params: id ? { id } : {} };
   }
-  if (pathname.startsWith('/projects/')) {
-    const id = pathname.slice('/projects/'.length);
+  if (normalizedPath.startsWith('/projects/')) {
+    const id = normalizedPath.slice('/projects/'.length);
     return { path: '/projects', params: id ? { id } : {} };
   }
-  return { path: (pathname as RoutePath) || '/', params: {} };
+  return { path: (normalizedPath as RoutePath) || '/', params: {} };
 };
 
 export const useRoute = () => {

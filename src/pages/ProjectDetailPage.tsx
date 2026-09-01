@@ -6,6 +6,7 @@ import {
   ArrowLeft, ArrowRight, Home, Mic, Ticket, Sparkles, Activity, Layers, Building2, Cpu,
   Search, Scale, CalendarCheck, Users,
   MessageSquare, FileSearch, LineChart, Bot, SlidersHorizontal,
+  FileText, Download, ExternalLink,
 } from 'lucide-react';
 import { Breadcrumbs } from '../components/common/Breadcrumbs';
 import { StatusBadge } from '../data/stageData';
@@ -28,6 +29,12 @@ const PRODUCT_ACCENTS: Record<string, string> = {
   unistay: '#4F7CCF',
   'synkturt-tts': '#6FA0E8',
   vibetix: '#335EAA',
+};
+
+const PRODUCT_HERO_IMAGES: Record<string, string> = {
+  unistay: '/unistay-hero.jpeg',
+  'synkturt-tts': '/synkturt-hero.jpeg',
+  vibetix: '/vibetix-hero.jpeg',
 };
 
 const useInView = (threshold = 0.15) => {
@@ -441,6 +448,159 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ id, onNavi
             </div>
           </div>
         );
+      case 'pitchdeck':
+        return (
+          <div key={i}>
+            <SectionReveal delay={delay}>
+              <SectionLabel accent={color}>{s.eyebrow}</SectionLabel>
+              <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.6rem, 3.4vw, 2.4rem)', fontWeight: 800, color: '#fff', lineHeight: 1.2, marginBottom: '0.75rem' }}>
+                {s.heading}
+              </h2>
+              <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.55)', lineHeight: 1.7, maxWidth: '680px', marginBottom: '2rem' }}>
+                {s.description}
+              </p>
+            </SectionReveal>
+
+            <div className="pitch-deck-grid" style={{
+              display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) minmax(240px, 380px)',
+              gap: 'clamp(1.5rem, 3.5vw, 2.5rem)', alignItems: 'center'
+            }}>
+              {/* Info + CTAs */}
+              <SectionReveal delay={0.05}>
+                <div className="glass-panel" style={{
+                  padding: 'clamp(1.5rem, 3vw, 2.25rem)', height: '100%',
+                  display: 'flex', flexDirection: 'column', justifyContent: 'center',
+                  borderRadius: '18px',
+                  background: 'rgba(17, 28, 46, 0.4)',
+                  backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)',
+                  border: `1px solid ${color}22`, boxShadow: '0 16px 40px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.03)'
+                }}>
+                  <div style={{
+                    display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
+                    width: 'fit-content', marginBottom: '1.1rem',
+                    padding: '0.35rem 0.8rem', borderRadius: '9999px',
+                    fontFamily: 'var(--font-mono)', fontSize: '0.62rem', fontWeight: 700,
+                    letterSpacing: '0.06em', textTransform: 'uppercase',
+                    background: `${color}12`, color, border: `1px solid ${color}30`
+                  }}>
+                    <FileText size={13} aria-hidden="true" /> {s.fileName}
+                  </div>
+                  <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
+                    <a
+                      href={s.assetPath}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`${s.viewLabel} (opens in a new tab)`}
+                      style={{
+                        display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
+                        padding: '0.8rem 1.5rem', borderRadius: '10px',
+                        background: 'linear-gradient(135deg, #4F7CCF, #335EAA)',
+                        border: '1px solid rgba(79, 124, 207, 0.3)',
+                        color: '#fff', fontSize: '0.85rem', fontWeight: 600,
+                        cursor: 'pointer', fontFamily: 'var(--font-body)', textDecoration: 'none',
+                        transition: 'all 0.25s', boxShadow: '0 4px 16px rgba(79, 124, 207, 0.3)'
+                      }}
+                      onMouseEnter={e => {
+                        e.currentTarget.style.boxShadow = '0 6px 24px rgba(79, 124, 207, 0.45)';
+                        e.currentTarget.style.transform = 'translateY(-1px)';
+                      }}
+                      onMouseLeave={e => {
+                        e.currentTarget.style.boxShadow = '0 4px 16px rgba(79, 124, 207, 0.3)';
+                        e.currentTarget.style.transform = 'translateY(0)';
+                      }}
+                    >
+                      {s.viewLabel} <ExternalLink size={15} aria-hidden="true" />
+                    </a>
+                    <a
+                      href={s.assetPath}
+                      download={s.fileName}
+                      aria-label={`${s.downloadLabel} ${s.fileName}`}
+                      style={{
+                        display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
+                        padding: '0.8rem 1.5rem', borderRadius: '10px',
+                        background: 'rgba(79, 124, 207, 0.08)',
+                        border: '1px solid rgba(79, 124, 207, 0.25)',
+                        color: '#A8C0E8', fontSize: '0.85rem', fontWeight: 600,
+                        cursor: 'pointer', fontFamily: 'var(--font-body)', textDecoration: 'none',
+                        transition: 'all 0.25s'
+                      }}
+                      onMouseEnter={e => {
+                        e.currentTarget.style.background = 'rgba(79, 124, 207, 0.16)';
+                        e.currentTarget.style.color = '#fff';
+                      }}
+                      onMouseLeave={e => {
+                        e.currentTarget.style.background = 'rgba(79, 124, 207, 0.08)';
+                        e.currentTarget.style.color = '#A8C0E8';
+                      }}
+                    >
+                      <Download size={15} aria-hidden="true" /> {s.downloadLabel}
+                    </a>
+                  </div>
+                </div>
+              </SectionReveal>
+
+              {/* Document preview */}
+              <SectionReveal delay={0.1}>
+                <a
+                  href={s.assetPath}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${s.viewLabel} (opens in a new tab)`}
+                  className="pitch-deck-preview"
+                  style={{
+                    display: 'block', position: 'relative', textDecoration: 'none',
+                    aspectRatio: '1 / 1.35', borderRadius: '18px', overflow: 'hidden',
+                    background: 'linear-gradient(160deg, rgba(19,39,61,0.9) 0%, rgba(12,34,58,0.82) 55%, rgba(12,30,52,0.92) 100%)',
+                    border: `1px solid ${color}22`,
+                    boxShadow: '0 24px 60px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.04)',
+                    transition: 'all 0.35s cubic-bezier(0.16,1,0.3,1)'
+                  }}
+                  onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.borderColor = color + '50'; e.currentTarget.style.boxShadow = `0 28px 70px rgba(0,0,0,0.5), 0 0 24px ${color}15`; }}
+                  onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.borderColor = color + '22'; e.currentTarget.style.boxShadow = '0 24px 60px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.04)'; }}
+                >
+                  <div style={{ position: 'absolute', inset: '10%', background: `radial-gradient(circle, ${color}1f, transparent 70%)`, filter: 'blur(45px)', pointerEvents: 'none' }} />
+                  <div style={{
+                    position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center',
+                    justifyContent: 'center', gap: '0.9rem', padding: '2rem', zIndex: 1
+                  }}>
+                    <div style={{
+                      width: '64px', height: '64px', borderRadius: '16px',
+                      background: `linear-gradient(135deg, ${color}40, ${color}12)`,
+                      border: `1px solid ${color}38`,
+                      display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff',
+                      boxShadow: `0 12px 28px rgba(0,0,0,0.35)`
+                    }}>
+                      <FileText size={28} aria-hidden="true" />
+                    </div>
+                    <span style={{
+                      fontFamily: 'var(--font-mono)', fontSize: '0.6rem', fontWeight: 700,
+                      letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.4)'
+                    }}>
+                      Pitch Deck
+                    </span>
+                    <div style={{
+                      display: 'inline-flex', alignItems: 'center',
+                      fontFamily: 'var(--font-display)', fontSize: '0.85rem', fontWeight: 600, color
+                    }}>
+                      {s.viewLabel} <ExternalLink size={13} style={{ marginLeft: '0.35rem' }} aria-hidden="true" />
+                    </div>
+                  </div>
+                  <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '3px', background: `linear-gradient(90deg, ${color}, transparent 90%)` }} />
+                </a>
+              </SectionReveal>
+            </div>
+
+            <style>{`
+              @media (max-width: 900px) {
+                .pitch-deck-grid { grid-template-columns: 1fr !important; }
+                .pitch-deck-preview { max-width: 340px; margin: 0 auto; width: 100%; }
+              }
+              @media (max-width: 560px) {
+                .pitch-deck-preview { max-width: 300px; }
+              }
+            `}</style>
+          </div>
+        );
       case 'vision':
         return (
           <SectionReveal key={i} delay={delay}>
@@ -475,7 +635,11 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ id, onNavi
         display: 'flex', flexDirection: 'column', justifyContent: 'center',
         padding: 'clamp(6.5rem, 12vh, 8rem) clamp(1.25rem, 4vw, 3rem) clamp(3rem, 6vw, 5rem)'
       }}>
-        <div style={{ position: 'absolute', inset: 0, backgroundColor: '#0C1E34' }} />
+        {PRODUCT_HERO_IMAGES[project.id] ? (
+          <img src={PRODUCT_HERO_IMAGES[project.id]} alt="" aria-hidden="true" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.3, filter: 'brightness(0.65) saturate(0.8)' }} />
+        ) : (
+          <div style={{ position: 'absolute', inset: 0, backgroundColor: '#0C1E34' }} />
+        )}
 
         {/* Ambient orbs */}
         <div style={{

@@ -16,7 +16,7 @@
 import {
   unistayProblem, unistayBuilding, unistayProcess,
   unistayAgentProgram, unistayDevelopment, unistayResearch,
-  unistayVision, unistayAI,
+  unistayVision, unistayAI, unistayPitchDeck,
   unistayGallerySlots, unistayAssets, UNISTAY_ACCENT,
 } from './unistayData';
 
@@ -125,6 +125,17 @@ export interface ProjectSectionAI {
   capabilities: ProjectAICapability[];
 }
 
+export interface ProjectSectionPitchDeck {
+  type: 'pitchdeck';
+  eyebrow: string;
+  heading: string;
+  description: string;
+  viewLabel: string;
+  downloadLabel: string;
+  assetPath: string;
+  fileName: string;
+}
+
 export type ProjectSection =
   | ProjectSectionProblem
   | ProjectSectionBuilding
@@ -133,7 +144,8 @@ export type ProjectSection =
   | ProjectSectionDevelopment
   | ProjectSectionResearch
   | ProjectSectionVision
-  | ProjectSectionAI;
+  | ProjectSectionAI
+  | ProjectSectionPitchDeck;
 
 // ── Per-project sections ──────────────────────────────────────
 export const projectSections: Record<string, ProjectSection[]> = {
@@ -188,6 +200,16 @@ export const projectSections: Record<string, ProjectSection[]> = {
       description: unistayAI.description,
       note: unistayAI.note,
       capabilities: unistayAI.capabilities,
+    },
+    {
+      type: 'pitchdeck',
+      eyebrow: unistayPitchDeck.eyebrow,
+      heading: unistayPitchDeck.heading,
+      description: unistayPitchDeck.description,
+      viewLabel: unistayPitchDeck.viewLabel,
+      downloadLabel: unistayPitchDeck.downloadLabel,
+      assetPath: unistayPitchDeck.assetPath,
+      fileName: unistayPitchDeck.fileName,
     },
     {
       type: 'research',

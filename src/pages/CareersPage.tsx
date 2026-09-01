@@ -107,7 +107,8 @@ const CareersPage: React.FC<CareersPageProps> = ({ onNavigate }) => {
 
       {/* ═══ 1. HERO ═══ */}
       <section style={{ position: 'relative', overflow: 'hidden', padding: 'clamp(5rem, 12vw, 8rem) 2rem clamp(3rem, 6vw, 5rem)' }}>
-        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(79,124,207,0.06) 0%, transparent 100%)', pointerEvents: 'none' }} />
+        <img src="/careers-hero.jpeg" alt="" aria-hidden="true" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.3, filter: 'brightness(0.7) saturate(0.85)' }} />
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(5,9,20,0.62) 0%, rgba(5,9,20,0.3) 50%, #050914 100%)', pointerEvents: 'none' }} />
         <div style={{ position: 'absolute', top: '30%', right: '-10%', width: '400px', height: '400px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(79,124,207,0.12) 0%, transparent 70%)', filter: 'blur(60px)', pointerEvents: 'none' }} />
         <div className="container" style={{ position: 'relative', zIndex: 1, maxWidth: '800px', textAlign: 'center' }}>
           <SectionReveal>
