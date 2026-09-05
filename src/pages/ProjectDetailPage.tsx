@@ -585,6 +585,7 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ id, onNavi
                       {s.viewLabel} <ExternalLink size={13} style={{ marginLeft: '0.35rem' }} aria-hidden="true" />
                     </div>
                   </div>
+                  )}
                   <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '3px', background: `linear-gradient(90deg, ${color}, transparent 90%)` }} />
                 </a>
               </SectionReveal>
@@ -725,7 +726,14 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ id, onNavi
         }}>
           {/* Copy */}
           <div className="project-hero-text" style={{ marginTop: '1.2rem' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '1.25rem' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.25rem' }}>
+              {PRODUCT_LOGO_IMAGES[project.id] && (
+                <img
+                  src={PRODUCT_LOGO_IMAGES[project.id]}
+                  alt={`${project.name} logo`}
+                  style={{ height: '44px', width: 'auto', borderRadius: '10px' }}
+                />
+              )}
               <span style={{
                 fontFamily: 'var(--font-mono)', fontSize: '0.72rem', fontWeight: 600,
                 letterSpacing: '0.14em', textTransform: 'uppercase', color: '#4F7CCF'
@@ -1012,7 +1020,13 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ id, onNavi
                 color: '#fff', marginBottom: '1rem',
                 boxShadow: `0 8px 24px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.08)`
               }}>
-                {projectIcons[project.id]}
+                {PRODUCT_LOGO_IMAGES[project.id] ? (
+                  <img
+                    src={PRODUCT_LOGO_IMAGES[project.id]}
+                    alt={`${project.name} logo`}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '13px' }}
+                  />
+                ) : projectIcons[project.id]}
               </div>
               <h3 style={{
                 fontFamily: 'var(--font-display)', fontSize: '1.15rem', fontWeight: 700,

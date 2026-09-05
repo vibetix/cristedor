@@ -125,8 +125,8 @@ export const unistayAI = {
 
 // ─────────────────────────────────────────────────────────────
 // Reserved asset architecture — /public/projects/unistay/
-// Future real assets should be placed here. No files exist yet;
-// the UI falls back to intentional placeholders until they do.
+// Future real product assets should be placed here. The logo is available;
+// the UI falls back to intentional placeholders for unfinished UI assets.
 // ─────────────────────────────────────────────────────────────
 export const unistayAssets = {
   base: '/projects/unistay',

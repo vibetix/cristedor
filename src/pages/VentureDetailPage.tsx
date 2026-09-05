@@ -156,7 +156,7 @@ export const VentureDetailPage: React.FC<VentureDetailPageProps> = ({ id, onNavi
         </div>
 
         {/* Content */}
-        <div style={{ position: 'relative', zIndex: 2, maxWidth: '800px' }}>
+        <div className="venture-hero-content" style={{ position: 'relative', zIndex: 2, maxWidth: '800px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1rem', flexWrap: 'wrap' }}>
             <span style={{
               padding: '0.25rem 0.7rem', borderRadius: '6px', fontSize: '0.65rem',
@@ -400,6 +400,9 @@ export const VentureDetailPage: React.FC<VentureDetailPageProps> = ({ id, onNavi
           .venture-hero {
             min-height: clamp(16rem, 30vh, 22rem) !important;
             padding: 0 1.25rem clamp(1.5rem, 4vw, 2.5rem) !important;
+          }
+          .venture-hero-content {
+            top: 10px;
           }
           .venture-stats {
             grid-template-columns: 1fr !important;
